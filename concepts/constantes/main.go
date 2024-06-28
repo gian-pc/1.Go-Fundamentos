@@ -8,7 +8,18 @@ const (
 	domain = "ed.team"
 )
 
+// las constantes a comparación de las variables no necesitan ser utilizadas para su compilación
+const (
+	Jan = iota + 1
+	Feb
+	Mar
+	Abr
+	May
+	Jun
+
+)
+
 func main(){
 	
-	fmt.Println(os, domain)
+	fmt.Println(Jan,Feb, Mar, Abr, May, Jun) // 1 2 3 4 5 6
 }
