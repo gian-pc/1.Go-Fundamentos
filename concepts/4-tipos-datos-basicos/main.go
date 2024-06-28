@@ -3,13 +3,9 @@ package main
 import "fmt"
 
 func main(){
-	// No se pueden hacer operaciones con diferentes tipos de datos: uint8 - uint16
+	// Por defecto Go asigna un string vacío "" a la variable a, cuado no se le asigna un valor
 
-	var a uint8 = 200
-	var b uint16 = 2500
+	var a string
 
-	// operador _blank: sirve para poder nombrar una lógica y no nos de problema al ejecutarla
-	_ = uint16(a) + b
-
-	fmt.Printf("Tipo: %T, Valor: %v\n", a, a) // uint8, 200
+	fmt.Printf("Tipo: %T, Valor: %q\n", a, a) // string, ""
 }
