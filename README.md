@@ -4,3 +4,4 @@
     - Variables
     - Constantes
     - Comentarios
+    - Tipos de datos
