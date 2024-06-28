@@ -3,6 +3,11 @@ package main
 import "fmt"
 
 func main(){
-	const os, domain string = "Linux", "ed.team"
+	
+	/* TODO: utilizar el operador de varible corta para constantes no es posible
+		por que devuelven o se convierten a var
+	*/
+	
+	os, domain := "Linux", "ed.team"
 	fmt.Println(os, domain)
 }
