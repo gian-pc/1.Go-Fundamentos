@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main(){
-	// Tipo de dato: numeric - byte alias uint8
+	// Tipo de dato: numeric - rune -unicode
 
-	var edad byte = 38
+	var a rune = 'a'
 
-	fmt.Printf("Tipo: %T, Valor: %v\n", edad, edad)
+	fmt.Printf("Tipo: %T, Valor: %v\n", a, a) // int32, 97
 }
