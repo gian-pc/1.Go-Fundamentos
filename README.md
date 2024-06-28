@@ -5,3 +5,4 @@
     - Constantes
     - Comentarios
     - Tipos de datos
+    - Operadores aritmeticos

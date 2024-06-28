@@ -4,7 +4,7 @@ import "fmt"
 
 func main(){
 	// Por defecto Go asigna un false a la variable a, cuado no se le asigna un valor
-	// el valor 0 de bool siempre será cero
+	// el valor 0 de bool siempre será false
 
 	var a bool
 
