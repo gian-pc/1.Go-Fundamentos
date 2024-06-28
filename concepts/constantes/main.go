@@ -3,11 +3,9 @@ package main
 import "fmt"
 
 func main(){
-	
-	/* TODO: utilizar el operador de varible corta para constantes no es posible
-		por que devuelven o se convierten a var
+	/* TODO: Si se puede inferir el tipo si eliminamos el tipo de dato
+		en este caso infiere "string" e "int"
 	*/
-	
-	os, domain := "Linux", "ed.team"
+	const os, domain= "Linux", 1
 	fmt.Println(os, domain)
 }
