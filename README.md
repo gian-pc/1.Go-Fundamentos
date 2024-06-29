@@ -6,3 +6,4 @@
     - Comentarios
     - Tipos de datos
     - Operadores aritmeticos
+    - Operadores lógicos y comparación
