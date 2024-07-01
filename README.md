@@ -10,3 +10,4 @@
 2. Punteros, arrays, slices, maps y structs
     - Punteros
     - Slice
+    - Maps
