@@ -16,4 +16,20 @@ func main(){
 	fmt.Println(num)
 	fmt.Println(letters)
 	fmt.Println(all)
+
+	fmt.Println("--------------- Slice 2 ---------------------")
+
+
+	// len(): # de elementos en el slice
+	// cap(): # de elementos del array, a partir del índice donde se creo el slice
+
+	animals := [5]string{"gorila", "perro", "gato", "ave", "elefante"}
+	pets := animals[1:3]
+
+	pets = append(pets, "conejo", "loro") // modifica ave x conejo y elefante x loro
+
+	fmt.Println("animals: " , animals)
+	fmt.Println("pets: " , pets)
+	fmt.Println("tamaño pets: " , len(pets))
+	fmt.Println("capacidad pets: " , cap(pets))
 }
