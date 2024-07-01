@@ -20,4 +20,9 @@ func main(){
 	}
 
 	fmt.Println(tech)
+
+	// eliminar un elemento de un map
+	delete(tech, "mouse")
+	fmt.Println(tech)
+
 }
