@@ -25,4 +25,7 @@ func main(){
 	delete(tech, "mouse")
 	fmt.Println(tech)
 
+	// leer elementos de un map. Sino encuentra el valor devuelve un string vacío
+	fmt.Println(music["guitar"])
+
 }
