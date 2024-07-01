@@ -19,4 +19,5 @@ func main(){
 	fmt.Println("pets: " , pets) // pets:  [perro gato conejo tortuga loro]
 	fmt.Println("tamaño pets: ", len(pets)) // 5
 	fmt.Println("capacidad pets: ", cap(pets)) // 8
+
 }
