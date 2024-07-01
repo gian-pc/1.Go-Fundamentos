@@ -26,6 +26,8 @@ func main(){
 	fmt.Println(tech)
 
 	// leer elementos de un map. Sino encuentra el valor devuelve un string vacío
-	fmt.Println(music["guitar"])
+	// sin embargo un map nos va a devolver 2 valores un contenido y un boleano que nos va a decir si existe o  no una llave dentro del mapa
+	content, ok := music["fake"]
+	fmt.Println(content, ok) // vacío, false
 
 }
