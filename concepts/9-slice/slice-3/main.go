@@ -4,8 +4,11 @@ import "fmt"
 
 func main(){
 	
-	// otra forma de crear slices
-	pets := []string{"perro", "gato"}
+	
+	//pets := []string{"perro", "gato"}
+	pets := make([]string,0,3)
+	pets = append(pets, "conejo", "tortuga", "loro")
+
 	fmt.Println("pets: " , pets) 
 	fmt.Println("tamaño pets: ", len(pets)) 
 	fmt.Println("capacidad pets: ", cap(pets)) 
