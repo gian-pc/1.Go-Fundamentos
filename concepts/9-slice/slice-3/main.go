@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main(){
 	
@@ -9,7 +12,8 @@ func main(){
 	//pets := make([]string,0,3)
 	//pets = append(pets, "conejo", "tortuga", "loro")
 
-	var pets []string
+	//var pets []string
+	pets := []string{}
 
 
 	fmt.Println("pets: " , pets) //[]
