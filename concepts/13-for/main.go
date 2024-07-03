@@ -3,9 +3,11 @@ package main
 import "fmt"
 
 func main(){
-	// iterando el slice literal
+	// modificando nuestro slice
+	numbers := []uint8{2,4,6,8}
 
-	for i, v := range []string{"🍕", "🍔", "🍎", "🌭"}{
-		fmt.Println("indice:", i, "valor", v)
+	for i := range numbers{
+		numbers[i] *= 2
 	}
+	fmt.Println(numbers)
 }
