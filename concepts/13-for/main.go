@@ -3,11 +3,17 @@ package main
 import "fmt"
 
 func main(){
-	// modificando nuestro slice
-	numbers := []uint8{2,4,6,8}
-
-	for i := range numbers{
-		numbers[i] *= 2
+	// iterando mapas
+	food := map[string]string{
+		"pizza": "🍕",
+		"hamburguer": "🍔",
+		"apple": "🍎",
+		"hotdog": "🌭",
 	}
-	fmt.Println(numbers)
+	
+
+	for key, value := range food{
+		fmt.Println("key", key, "valor", value)
+	}
+	
 }
