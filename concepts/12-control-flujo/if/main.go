@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func main(){
+
 	
-	character := "🦸"
 	
-	if  character == "🦸"{
+	if character := "🦸"; character == "🦸"{
 		fmt.Println("es un superheroe")
 
 	}else if character == "🦹"{
@@ -17,5 +17,5 @@ func main(){
 
 	}
 
-	fmt.Println(character)
+	//fmt.Println(character) --> genera error al estar character fuera del if
 }
