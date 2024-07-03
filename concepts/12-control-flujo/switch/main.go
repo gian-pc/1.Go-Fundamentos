@@ -3,12 +3,12 @@ package main
 import "fmt"
 
 func main(){
-	character := "🦸"
+	character := "🧟"
 
 	switch character{
-	case "🦸":
+	case "🦸", "🧞":
 		fmt.Println("es un superheroe")
-	case "🦹":
+	case "🦹", "🧟":
 		fmt.Println("es un supervillano")
 	default:
 		fmt.Println("es un personaje normal")
