@@ -1,19 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main(){
-	// iterando mapas
-	food := map[string]string{
-		"pizza": "🍕",
-		"hamburguer": "🍔",
-		"apple": "🍎",
-		"hotdog": "🌭",
-	}
-	
+	// iterando sobre un string
 
-	for key, value := range food{
-		fmt.Println("key", key, "valor", value)
+	for i, v := range "Gian" {
+		fmt.Println("indice", i, "value", string(v))
 	}
-	
+
 }
