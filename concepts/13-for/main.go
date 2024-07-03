@@ -3,8 +3,10 @@ package main
 import "fmt"
 
 func main(){
-	// for clásico
-	for i := 1; i <= 5; i++ {
+	// for continuo
+	i := 1
+	for i <= 5{
 		fmt.Println(i)
+		i++
 	}
 }
