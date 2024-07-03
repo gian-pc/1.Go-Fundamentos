@@ -3,8 +3,6 @@ package main
 import "fmt"
 
 func main(){
-
-	
 	
 	if character := "🦸"; character == "🦸"{
 		fmt.Println("es un superheroe")
