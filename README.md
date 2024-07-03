@@ -16,3 +16,4 @@
     - Control de flujo con if y switch
     - For
     - Funciones con parámetros por valor y por referencia
+    - Funciones con retorno
