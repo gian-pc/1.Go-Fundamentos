@@ -12,3 +12,5 @@
     - Slice
     - Maps
     - Estructuras
+3. Control de flujo, funciones y errores
+    - Control de flujo con if y switch
