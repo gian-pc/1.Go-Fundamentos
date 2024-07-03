@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main(){
-	// for continuo
+	// for indefinido: se usa para trabajar con sockets y este a la escucha indefinidamente
 	i := 1
-	for i <= 5{
+	for {
 		fmt.Println(i)
 		i++
 	}
