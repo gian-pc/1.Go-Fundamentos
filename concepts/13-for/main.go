@@ -3,10 +3,9 @@ package main
 import "fmt"
 
 func main(){
-	// iterando el slice
-	food := []string{"🍕", "🍔", "🍎", "🌭"}
+	// iterando el slice literal
 
-	for i, v := range food{
+	for i, v := range []string{"🍕", "🍔", "🍎", "🌭"}{
 		fmt.Println("indice:", i, "valor", v)
 	}
 }
