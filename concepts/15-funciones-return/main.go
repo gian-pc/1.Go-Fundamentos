@@ -1,12 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main(){
-	result := sum(2, 3)
-	fmt.Println(result)
+	lower, upper := convert("GianPC")
+	fmt.Println(lower, upper)
 }
 
-func sum(a, b int) int{
-	return a + b
+// funciones con multiples retornos
+func convert(text string) (string, string){
+	lower := strings.ToLower(text)
+	upper := strings.ToUpper(text)
+
+	return lower, upper
 }
