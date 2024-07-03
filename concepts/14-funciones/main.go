@@ -1,11 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
+// Las funciones por defecto van a trabajar con parámetros por valor
 func main(){
-	greet("Gian", "Paucar")
+	name := "gian"
+	toUpperCase(name)
+
+	fmt.Println(name) // gian : no se llega a modificar a mayúscula el nombre gian
 }
 
-func greet(firstName, lastName string){
-	fmt.Println("Hello", firstName, lastName)
+func toUpperCase(text string){
+	text = strings.ToUpper(text)
 }
