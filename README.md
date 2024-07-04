@@ -20,3 +20,4 @@
     - Funciones que reciben y retornan funciones
     - Funciones variáticas y anónimas
     - Manejo de errores
+    - Defer
