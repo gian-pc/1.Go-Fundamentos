@@ -18,3 +18,4 @@
     - Funciones con parámetros por valor y por referencia
     - Funciones con retorno
     - Funciones que reciben y retornan funciones
+    - Funciones variáticas y anónimas
