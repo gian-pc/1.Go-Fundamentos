@@ -15,7 +15,7 @@ var food = map[int]string{
 
 func main(){
 
-	found, err := search("1") // 🍕 --> encuentra la pizza en el mapa
+	found, err := search("2") // 🍔 --> encuentra la hamburguesa en el mapa
 	if err != nil {
 		fmt.Println(err)
 		return
