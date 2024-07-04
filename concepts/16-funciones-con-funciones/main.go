@@ -6,13 +6,18 @@ func main(){
 	nums := []int{2,12,23,98,21,79}
 
 	// llamamos nuestra función filter
-	resultado := filter(nums, mayoresACincuenta)
+	resultado := filter(nums, menoresAVeinte)
 	fmt.Println(resultado) // [98 79]
 
 }
 
 func mayoresACincuenta(i int) bool {
 	return i > 50
+}
+
+// podemos generar otras funciones y reutilizar la función filter
+func menoresAVeinte(i int) bool {
+	return i < 20
 }
 
 // la función filter recibe un slice(nums) de enteros([]int)
