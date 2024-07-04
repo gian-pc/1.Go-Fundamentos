@@ -11,8 +11,9 @@ func main(){
 	fmt.Println(sum(2,3,12,1,24)) // 42
 }
 // SOLUCIÓN: función variática que me va permitir recibir n argumetos
-func sum(nums  ...int) int{
-	var total int
+// podriamos modificar esta función con los retornos nombrados
+func sum(nums  ...int) (total int){
+
 	for _, num := range nums {
 		total += num
 	}
