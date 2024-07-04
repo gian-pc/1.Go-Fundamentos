@@ -15,7 +15,13 @@ var food = map[int]string{
 
 func main(){
 
-	found, err := search("3") // not found --> No encuentra el valor en el mapa
+	found, err := search("3") // pudimos controlar el error correctamente --> No encuentra el valor en el mapa
+	// comparando un error específico
+	if err == errNotFound{
+		fmt.Println("pudimos controlar el error correctamente")
+		return
+	}
+
 	if err != nil {
 		fmt.Println(err)
 		return
