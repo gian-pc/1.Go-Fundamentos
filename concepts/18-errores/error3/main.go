@@ -17,7 +17,7 @@ func main(){
 
 	found, err := search("3") // pudimos controlar el error correctamente --> No encuentra el valor en el mapa
 	// comparando un error específico
-	if err == errNotFound{
+	if errors.Is(err, errNotFound){ // errors.IS --> comprueba un erro específico
 		fmt.Println("pudimos controlar el error correctamente")
 		return
 	}
@@ -36,12 +36,12 @@ func main(){
 func search(key string) (string, error){
 	num, err := strconv.Atoi(key) // recibimos key y lo convertimos a num
 	if err != nil{
-		return "", fmt.Errorf("trconv.Atoi(): %v", err)
+		return "", fmt.Errorf("trconv.Atoi(): %w", err) // ErrorF cuando se tiene varios niveles de anidamiento
 	}
 
 	emoji, err := findFood(num)
 	if err != nil {
-		return "", fmt.Errorf("findFood(): %v", err)
+		return "", fmt.Errorf("findFood(): %w", err) // %w --> para poder comprobar dentro del error que se esta devolviendo independientemente de la cantidad de funciones que esten anidadas
 	}
 
 	return emoji, nil
