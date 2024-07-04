@@ -10,7 +10,7 @@ import (
 var errNotFound = errors.New("not found")
 func main(){
 
-	found, err := search("a")
+	found, err := search("1")
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -20,5 +20,5 @@ func main(){
 }
 
 func search(key string) (string, error){
-	return "", errNotFound
+	return "", errNotFound // forzosamente estamos devolviendo el error
 }
