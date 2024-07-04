@@ -1,15 +1,21 @@
 package main
 
+import "fmt"
+
 func main(){
-	sum(2, 3)
-	// ¿Que pasa si necesito llamar la función sum com más valores
-	// esto no sería posible y se generaría un error
-	sum(2,3,12)
-	sum(2,3,12,1,24)
-
 	
+	// ¿Que pasa si necesito llamar la función sum com más valores
+	fmt.Println(sum(2)) // 2
+	fmt.Println(sum(2, 3)) // 5
+	fmt.Println(sum(2,3,12)) // 17
+	fmt.Println(sum(2,3,12,1,24)) // 42
 }
+// SOLUCIÓN: función variática que me va permitir recibir n argumetos
+func sum(nums  ...int) int{
+	var total int
+	for _, num := range nums {
+		total += num
+	}
 
-func sum(a, b int) int{
-	return a + b
+	return total
 }
