@@ -6,9 +6,9 @@ func main(){
 
 	// funciones anónimas: son simplemente funciones que no tienen nombre
 
-	greet := func()  {
+	func()  {
 		fmt.Println("👋Hola")
-	}
+	}() // autoejecutadas
 
-	greet()
+	
 }
