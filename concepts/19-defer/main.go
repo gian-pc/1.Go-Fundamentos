@@ -2,24 +2,16 @@ package main
 
 import "fmt"
 
-// pila
-defer fmt.Println(1)
-defer fmt.Println(2)
-defer fmt.Println(3)
-
 func main(){
-	// Defer: La función defer nos permite diferir algo
-	// diferir significa aplazar, que queremos aplazar la ejecución de una función
-	// y hasta que momento queremos aplazar esa ejecución
-	// hasta que la función en donde fue llamada el defer retorne
+	num := 4
+	// la función diferida hace que Go antes de agregar a la pila evalua los argumentos de mi función en este caso num = 4
+	defer fmt.Println("imprime", num) // 1. se agrega esta función a la pila     5. se ejecuta la funcion diferida
 
-	// cuando se tiene multiples funciones diferidas se va agregar a la pila
-	// una vez la función main retorne va ejecutar la funciones en la pila 1, 2 , 3
-	defer fmt.Println(3)
-	defer fmt.Println(2)
-	defer fmt.Println(1)
+	num = 10 // 2. actualizamos el número 10
+	fmt.Println(num) // 3. se imprime el número 10
 	
+	// 4. la función main retorna
 
 }
 
-// output: 1 2 3
+// output: 10, imprime 4
