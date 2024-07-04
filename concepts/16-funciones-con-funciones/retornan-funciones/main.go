@@ -4,8 +4,12 @@ import "fmt"
 
 func main(){
 
-	result := sum(2)(3)
-	fmt.Println(result) // 5
+	// reutilizando las funciones
+	suma10 := sum(10)
+	fmt.Println(suma10(2))
+	fmt.Println(suma10(4))
+	fmt.Println(suma10(1))
+	fmt.Println(suma10(5))
 
 }
 
