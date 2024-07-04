@@ -23,7 +23,7 @@ func main(){
 	}
 
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("search()", err)
 		return
 	}
 
@@ -36,12 +36,12 @@ func main(){
 func search(key string) (string, error){
 	num, err := strconv.Atoi(key) // recibimos key y lo convertimos a num
 	if err != nil{
-		return "", err // retorna vacío porque no vamos a poder encontrar la 🍕, 🍔 y el error que se esta produciendo al no poder convertir key a un número
+		return "", fmt.Errorf("trconv.Atoi(): %v", err)
 	}
 
 	emoji, err := findFood(num)
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("findFood(): %v", err)
 	}
 
 	return emoji, nil
@@ -56,3 +56,5 @@ func findFood(id int) (string, error){
 
 	return value, nil // si lo encontramos retornamos el emoji y nil(por que no encontramos ningún error)
 }
+
+// output: search() findFood(): not found --> de esta manera puedo rastrear que función me produjo el error y así poder corregirlo rápidamente
