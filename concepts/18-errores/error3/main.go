@@ -15,7 +15,7 @@ var food = map[int]string{
 
 func main(){
 
-	found, err := search("a") // strconv.Atoi: parsing "a": invalid syntax --> el error se da en la línea 31
+	found, err := search("1") // 🍕 --> encuentra la pizza en el mapa
 	if err != nil {
 		fmt.Println(err)
 		return
