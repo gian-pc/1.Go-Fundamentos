@@ -14,10 +14,10 @@ func main(){
 	// usualmente veremos que las funciones retornan como último argumento un error
 	// para que podamos validar si la función que ejecutamos produjo un error y así poderlo controlar
 
-	num, err := strconv.Atoi("10") // la función Atoi del package strconv convierte de string a int
+	num, err := strconv.Atoi("gian-pc") // la función Atoi del package strconv convierte de string a int
 	if err != nil{
 		fmt.Println(err)
 		return
 	}
-	fmt.Println(num) // 10
+	fmt.Println(num) // strconv.Atoi: parsing "gian-pc": invalid syntax
 }
