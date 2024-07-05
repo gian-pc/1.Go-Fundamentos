@@ -21,3 +21,4 @@
     - Funciones variáticas y anónimas
     - Manejo de errores
     - Defer
+    - Panic y recover
