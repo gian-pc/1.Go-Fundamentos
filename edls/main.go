@@ -20,5 +20,5 @@ func main(){
 
 	
 }
-// terminal: $ go run . /home/gian/Desktop/testFiles
-// output: [- README.md - gian.png - go1.22.4.linux-amd64.tar.gz d myFolder/]
+// terminal: $ go run . 
+// output: panic
