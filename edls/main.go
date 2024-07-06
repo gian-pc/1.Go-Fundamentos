@@ -21,9 +21,16 @@ func main(){
 	if err != nil{
 		panic(err)
 	}
-	fmt.Println(dirs)
+
+	// leyendo los archivos del directorio que nos esta enviando el usuario
+	for _, dir := range dirs{
+		fmt.Println(dir.Name())
+	}
 
 	
 }
 // terminal: $ go run . 
-// output: [- edls.go - go.mod - main.go]
+// output:
+	// edls.go
+	// go.mod
+	// main.go
