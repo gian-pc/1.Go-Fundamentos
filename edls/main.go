@@ -29,8 +29,9 @@ func main(){
 
 	
 }
-// terminal: $ go run . 
+// terminal: $ go run . /home/gian/Desktop/testFiles
 // output:
-	// edls.go
-	// go.mod
-	// main.go
+	// README.md
+	// gian.png
+	// go1.22.4.linux-amd64.tar.gz
+	// myFolder
