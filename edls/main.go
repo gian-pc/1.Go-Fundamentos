@@ -22,9 +22,13 @@ func main(){
 		panic(err)
 	}
 
+	// ahora vamos a poblar nuestra estructura file creada en edls 
+	// y lo vamos a poblar en un slice de archivos(file)
+	fs := []file{}
+
 	// leyendo los archivos del directorio que nos esta enviando el usuario
 	for _, dir := range dirs{
-		fmt.Println(dir.Name())
+		fmt.Println(dir.Name()) // ya no imprimiremos directamente los nombres de los archivos sino que lo enviaremos al slice fs
 	}
 
 	
