@@ -28,8 +28,15 @@ func main(){
 
 	// leyendo los archivos del directorio que nos esta enviando el usuario
 	for _, dir := range dirs{
-		getFile(dir, false) // creamos la función getFile y le pasamos el directorio(dir) y un valor adicional que es para  indicar si ese archivo es oculto o no, temporalmente le vamos a decir que ningun archivo es oculto ya que va a variar según el SO
+		f, err := getFile(dir, false) // la función getFile retorna un archivo o u error
+		// controlando el error
+		if err != nil{
+			panic(err)
+		}
+		
+		fs = append(fs, f) // agregamos el archivo al slice
 	}
+	fmt.Println(fs) // imprimimos el contenido del slice fs
 
 }
 
