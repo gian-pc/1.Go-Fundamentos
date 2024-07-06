@@ -3,9 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io/fs"
 	"os"
-
-	"golang.org/x/tools/go/analysis/passes/nilfunc"
 )
 
 func main(){
@@ -50,9 +49,21 @@ func getFile(dir fs.DirEntry, isHidden bool)(file, error){
 	if err != nil{
 		return file{}, fmt.Errorf("dir.Info(): %v", err) // en el caso que se presente un error devuelve un archivo vacío y el error
 	}
-	
+
+	// llenamos la estructura
+	f := file{
+		name:				 dir.Name(),
+		isDir:				 dir.IsDir(),
+		isHidden:			 isHidden,
+		userName:			 "gian-pc",
+		groupName:			 "dev",
+		size:				 info.Size(),
+		modificationTime:	 info.ModTime(),
+		mode:				 info.Mode().String(), // el mode nos prove info de los permisos de lectura, escritura, etc. de los archivos 
+	}
 
 
-	return file{}, nil // retornamos un archivo o un error
+
+	return f, nil // retornamos un archivo o un error
 
 }
