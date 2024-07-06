@@ -4,6 +4,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
+
+	"golang.org/x/tools/go/analysis/passes/nilfunc"
 )
 
 func main(){
@@ -42,6 +44,15 @@ func main(){
 
 // Implementando getFile
 func getFile(dir fs.DirEntry, isHidden bool)(file, error){
+	// ahora vamos a implementar esta función file, lo único que va hacer es poblar la estructura file es decir todos esos campos que previamente incluimos
+	// para ello lo primero que vamos hacer es tener información del archivo que esta en dir
+	info, err := dir.Info() // Info nos va proveer información acerca del archivo para poder poblar nuestra estructura
+	if err != nil{
+		return file{}, fmt.Errorf("dir.Info(): %v", err) // en el caso que se presente un error devuelve un archivo vacío y el error
+	}
+	
+
+
 	return file{}, nil // retornamos un archivo o un error
 
 }
