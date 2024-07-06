@@ -28,14 +28,13 @@ func main(){
 
 	// leyendo los archivos del directorio que nos esta enviando el usuario
 	for _, dir := range dirs{
-		fmt.Println(dir.Name()) // ya no imprimiremos directamente los nombres de los archivos sino que lo enviaremos al slice fs
+		getFile(dir, false) // creamos la función getFile y le pasamos el directorio(dir) y un valor adicional que es para  indicar si ese archivo es oculto o no, temporalmente le vamos a decir que ningun archivo es oculto ya que va a variar según el SO
 	}
 
-	
 }
-// terminal: $ go run . /home/gian/Desktop/testFiles
-// output:
-	// README.md
-	// gian.png
-	// go1.22.4.linux-amd64.tar.gz
-	// myFolder
+
+// Implementando getFile
+func getFile(dir fs.DirEntry, isHidden bool)(file, error){
+	return file{}, nil // retornamos un archivo o un error
+
+}
