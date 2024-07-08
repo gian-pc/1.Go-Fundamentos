@@ -39,7 +39,16 @@ func main(){
 		
 		fs = append(fs, f) // agregamos el archivo al slice
 	}
-	fmt.Println(fs) // imprimimos el contenido del slice fs
+
+	// formateando la salida de archivos
+	printList(fs)
+
+}
+
+func printList(fs []file){
+	for _, file := range fs {
+		fmt.Printf("%s\n", file.mode)
+	}
 
 }
 
