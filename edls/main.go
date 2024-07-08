@@ -5,12 +5,15 @@ import (
 	"fmt"
 	"io/fs"
 	"os"
+	"regexp"
 	"runtime"
 	"strings"
 	"time"
 )
 
 func main(){
+	// filter pattern
+	flagPattern := flag.String("p", "", "filter by pattern")
 	
 	flag.Parse()
 
@@ -37,7 +40,15 @@ func main(){
 		if err != nil{
 			panic(err)
 		}
-		
+		// filtrarlo antes de agregarlo 
+		isMatched, err := regexp.MatchString(*flagPattern, f.name)
+		if err != nil{
+			panic(err)
+		}
+		if !isMatched {
+			continue
+		}
+
 		fs = append(fs, f) // agregamos el archivo al slice
 	}
 
@@ -141,3 +152,7 @@ func isImage(f file) bool{
 	strings.HasSuffix(f.name, jpg) ||
 	strings.HasSuffix(f.name, gif)
 }
+
+// comandos en la terminal
+// $ go run . /home/gian/Desktop/testFiles --> muestra todos los archivos
+// $ go run . -p .png /home/gian/Desktop/testFiles --> muestra solo los archivos que tengan la extensión .png
