@@ -22,3 +22,5 @@
     - Manejo de errores
     - Defer
     - Panic y recover
+4. Genéricos
+    - Funciones no genéricas y any
