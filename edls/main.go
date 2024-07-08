@@ -7,6 +7,7 @@ import (
 	"os"
 	"runtime"
 	"strings"
+	"time"
 )
 
 func main(){
@@ -47,7 +48,7 @@ func main(){
 
 func printList(fs []file){
 	for _, file := range fs {
-		fmt.Printf("%s %s %s %d\n", file.mode,file.userName, file.groupName, file.size)
+		fmt.Printf("%s %s %s %10d %s\n", file.mode,file.userName, file.groupName, file.size, file.modificationTime.Format(time.DateTime))
 	}
 
 }
