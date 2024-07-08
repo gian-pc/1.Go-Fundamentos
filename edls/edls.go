@@ -2,6 +2,9 @@ package main
 
 import "time"
 
+// Windows os system
+const Windows = "windows"
+
 // file types
 const (
 	fileRegular int = iota

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/fs"
 	"os"
+	"runtime"
 	"strings"
 )
 
@@ -92,3 +93,11 @@ func isLink(f file) bool{
 	return strings.HasPrefix(strings.ToUpper(f.mode), "L") // para saber si el archivo que estamos pasando es de tipo link
 }
 
+func isExec(f file) bool{
+	if runtime.GOOS == Windows{// validar en que sistema esta corriendo nuestro programa para poder identificar si debo validar un .exe o debo validar los permisos del mod
+		return strings.HasSuffix(f.name, exe)
+	}
+	// validar si es un ejecutable en unix
+	return strings.Contains(f.mode, "X")
+
+}
