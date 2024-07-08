@@ -109,3 +109,9 @@ func isCompress(f file) bool{
 	strings.HasSuffix(f.name, rar) ||
 	strings.HasSuffix(f.name, deb)
 }
+
+func isImage(f file) bool{
+	return strings.HasSuffix(f.name, png) ||
+	strings.HasSuffix(f.name, jpg) ||
+	strings.HasSuffix(f.name, gif)
+}
