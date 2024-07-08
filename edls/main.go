@@ -51,8 +51,7 @@ func printList(fs []file){
 		// vamos agregar el icono, nombre del archivo y el caracter especial
 		style  := mapStyleByFileType[file.fileType]
 
-
-		fmt.Printf("%s %s %s %10d %s %s\n", file.mode,file.userName, file.groupName, file.size, file.modificationTime.Format(time.DateTime), style.icon)
+		fmt.Printf("%s %s %s %10d %s %s %s\n", file.mode,file.userName, file.groupName, file.size, file.modificationTime.Format(time.DateTime), style.icon, file.name)
 	}
 
 }
