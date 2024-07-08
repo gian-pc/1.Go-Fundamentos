@@ -83,7 +83,20 @@ func getFile(dir fs.DirEntry, isHidden bool)(file, error){
 // esa función va a recibir un puntero a ese archivo
 
 func setFile(f *file){
-
+	switch{
+	case isLink(*f):
+		f.fileType = fileLink
+	case f.isDir:
+		f.fileType = fileDirectory
+	case isExec(*f):
+		f.fileType = fileExecutable
+	case isCompress(*f):
+		f.fileType = fileCompress
+	case isImage(*f):
+		f.fileType = fileImage
+	default:
+		f.fileType = fileRegular
+	}
 }
 
 
