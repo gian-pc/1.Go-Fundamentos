@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/fs"
 	"os"
+	"strings"
 )
 
 func main(){
@@ -62,8 +63,32 @@ func getFile(dir fs.DirEntry, isHidden bool)(file, error){
 		mode:				 info.Mode().String(), // el mode nos prove info de los permisos de lectura, escritura, etc. de los archivos 
 	}
 
+	// 2
+	// luego llamar a la función setFile y pasarle con el operador de dirección & el archivo que hemos establecido
+	// de esta manera le damos acceso a la función setFile para que modifique el contenido de la estructura que ya hemos poblado anteriormente
+	// y que tipo de modificación vamos hacer?, pues es simplemente agregarle el tipo de archivo de acuerdo a la especificación que nosotros hemos establecido
+	
+	setFile(&f)
+
 
 
 	return f, nil // retornamos un archivo o un error
 
 }
+
+// 1
+// asignarles a cada uno de estos archivos un tipo definido
+// para ello crearemos una función setFile
+// esa función va a recibir un puntero a ese archivo
+
+func setFile(f *file){
+
+}
+
+
+// 3
+// para poder setear este archivo vamos a crear diferentes funciones auxiliares
+func isLink(f file) bool{
+	return strings.HasPrefix(strings.ToUpper(f.mode), "L") // para saber si el archivo que estamos pasando es de tipo link
+}
+
