@@ -47,7 +47,7 @@ func main(){
 
 func printList(fs []file){
 	for _, file := range fs {
-		fmt.Printf("%s\n", file.mode)
+		fmt.Printf("%s %s\n", file.mode,file.userName)
 	}
 
 }
