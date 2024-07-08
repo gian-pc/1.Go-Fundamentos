@@ -101,3 +101,11 @@ func isExec(f file) bool{
 	return strings.Contains(f.mode, "X")
 
 }
+
+func isCompress(f file) bool{ 
+	return strings.HasSuffix(f.name, zip) ||
+	strings.HasSuffix(f.name, gz) ||
+	strings.HasSuffix(f.name, tar) ||
+	strings.HasSuffix(f.name, rar) ||
+	strings.HasSuffix(f.name, deb)
+}
