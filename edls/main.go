@@ -41,7 +41,7 @@ func main(){
 			panic(err)
 		}
 		// filtrarlo antes de agregarlo 
-		isMatched, err := regexp.MatchString(*flagPattern, f.name)
+		isMatched, err := regexp.MatchString("(?i)" + *flagPattern, f.name)
 		if err != nil{
 			panic(err)
 		}
@@ -156,3 +156,4 @@ func isImage(f file) bool{
 // comandos en la terminal
 // $ go run . /home/gian/Desktop/testFiles --> muestra todos los archivos
 // $ go run . -p .png /home/gian/Desktop/testFiles --> muestra solo los archivos que tengan la extensión .png
+// $ go run . -p .PNG /home/gian/Desktop/testFiles --> muestra solo los archivos que tengan la extensión .png sin importar si se envia la extensión .png en mayuscula o minuscula
