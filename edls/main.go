@@ -14,6 +14,7 @@ import (
 func main(){
 	// filter pattern
 	flagPattern := flag.String("p", "", "filter by pattern")
+	flagNumberRecords := flag.Int("n", 0, "number of records")
 	
 	flag.Parse()
 
@@ -52,13 +53,18 @@ func main(){
 		fs = append(fs, f) // agregamos el archivo al slice
 	}
 
+	// mostrando la cantidad de archivos de salida
+	if *flagNumberRecords == 0 || *flagNumberRecords > len(fs){
+		*flagNumberRecords = len(fs)
+	}
+
 	// formateando la salida de archivos
-	printList(fs)
+	printList(fs, *flagNumberRecords)
 
 }
 
-func printList(fs []file){
-	for _, file := range fs {
+func printList(fs []file, nRecords int){
+	for _, file := range fs[:nRecords] {
 		// vamos agregar el icono, nombre del archivo y el caracter especial
 		style  := mapStyleByFileType[file.fileType]
 
@@ -157,3 +163,5 @@ func isImage(f file) bool{
 // $ go run . /home/gian/Desktop/testFiles --> muestra todos los archivos
 // $ go run . -p .png /home/gian/Desktop/testFiles --> muestra solo los archivos que tengan la extensión .png
 // $ go run . -p .PNG /home/gian/Desktop/testFiles --> muestra solo los archivos que tengan la extensión .png sin importar si se envia la extensión .png en mayuscula o minuscula
+
+// $ go run . -n 2 /home/gian/Desktop/testFiles --> flag n cantidad de archivos de salida
