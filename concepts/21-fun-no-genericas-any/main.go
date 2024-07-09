@@ -3,19 +3,21 @@ package main
 import "fmt"
 
 func main(){
-	fmt.Println(sum(2, 5, 7))
-	// si quisieramos sumar tipos de datos flotante
-	fmt.Println(sum(2.4, 5.5, 7.2)) // no se podría y se generaría un error ya que nuestra función esta limitada a int
+	fmt.Println(sum[int](2,4,67))
+
 }
 
-// posible solución:  genericos - any --> se generaría un error debido al alcance de any
-// ya que estamos haciendo una operación invalida y que el operador + no esta definida sobre la variable total
-// ya que total es de tipo any
-// al decirlo que es de tipo any, le estas diciendo que puede recibir cualquier tipo de dato(bool, string, int)
-// y eso no es lo que queremos, lo que queremos es sumar enteros y flotantes
-// por lo tanto any no sería la solución
-func sum(nums ...any) any {
-	var total any
+// entoces es aquí donde entran los parámetros de tipo
+// estos parámetros de tipo nos van a permitir definir restricciones para trabajar con multiples tipos de datos ya sean funciones o en tipos como estructura
+// entonces cual sería la restricción en la función suma, pues recibir solo datos de tipo enteros y flotantes
+// los parámetros de tipo se van a definir en corchetes
+// existen 3 tipos de restricciones o constrains
+	// - constrains arbitrario
+	// - constrains de unión de elementos
+	// - constrains de aproximación de elementos
+
+func sum[T int](nums ...T) T {
+	var total T
 	for _, num := range nums{
 		total += num
 	}
