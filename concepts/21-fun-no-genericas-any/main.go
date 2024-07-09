@@ -31,7 +31,7 @@ func Includes[T comparable](list []T, value T) bool {
 	return false
 }
 
-func filter[T constraints.Integer | constraints.Float](nums []T, callback func(T) bool) []T{
+func filter[T constraints.Ordered](nums []T, callback func(T) bool) []T{
 
 	result := make([]T, 0, len(nums))
 
