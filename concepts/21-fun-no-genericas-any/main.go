@@ -15,7 +15,7 @@ func main(){
 
 // - tipos de datos definidos --> enteros, flotantes, strings, booleanos, etc.
 // - se pueden también crear nuestros propios tipos de datos basados en eso datos existentes
-func sum[T int | float64 | MyInt](nums ...T) T {
+func sum[T ~int | float64 ](nums ...T) T {
 	var total T
 	for _, num := range nums{
 		total += num
