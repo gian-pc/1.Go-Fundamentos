@@ -2,35 +2,27 @@ package main
 
 import (
 	"fmt"
-	"golang.org/x/exp/constraints"
 )
 
-type MyInt int
-
 func main(){
-	var num1 MyInt = 2
-	var num2 MyInt = 6
+	// constraint comparable --> que viene por defecto en Go
+	// me va permitir trabajar con restricciones de tipo
+	// en donde solo se utiliza operadores de comparación (== !=)
+	// y para ello no tendría que definir un tipo explicito como un entero o un float
+	// porque simplemente la lógica que voy a tener dentro de mi función es para comparar algo
 
-	fmt.Println(sum(2,4,67))
-	fmt.Println(sum[float32](2.0,4.6,67.1))
-	fmt.Println(sum(num1, num2))
+	fmt.Println( Includes([]string{"a","b","c"},"c")) // true
+	fmt.Println( Includes([]string{"a","b","c"},"d")) // false
+	fmt.Println( Includes([]int{1,12,24},24)) // true
 }
 
-// Otra solución: constrains a partir de interface
-type Number interface{
-	~int | ~float64 | ~float32 | ~uint
-}
-
-func sum[T constraints.Integer | constraints.Float](nums ...T) T { 
-	var total T
-	for _, num := range nums{
-		total += num
+// a esta función le pasamos un slice con multiples valores y le preguntamos que si el valor que queremos buscaar esta dentro del slice
+func Includes[T comparable](list []T, value T) bool {
+	for _, item := range list{
+		if item ==  value{
+			return true
+		}
 	}
 
-	return total
+	return false
 }
-
-// En la terminal:
-	// $ go mod init cualquier-nombre
-	// $ go mod tidy
-	// $ go get golang.org/x/exp/constraints
