@@ -13,9 +13,9 @@ func main(){
 	fmt.Println(sum(num1, num2))
 }
 
-// - tipos de datos definidos --> enteros, flotantes, strings, booleanos, etc.
-// - se pueden también crear nuestros propios tipos de datos basados en eso datos existentes
-func sum[T ~int | float64 ](nums ...T) T {
+// por ende si se quiere que la función suma sea de forma generica soporte todos esos tipos de datos
+// una posible solución sería incrementar esos tipos de datos en los parámetros
+func sum[T ~int | ~float64 | ~float32 | ~uint](nums ...T) T { // en este caso solo estamos restringiendo int y float64 sin embargo hay mas tipos de datos numericos
 	var total T
 	for _, num := range nums{
 		total += num

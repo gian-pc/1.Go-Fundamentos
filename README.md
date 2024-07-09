@@ -25,3 +25,4 @@
 4. Genéricos
     - Funciones no genéricas y any
     - Parámetros de tipo y constrains
+    - Constrains y operadores
