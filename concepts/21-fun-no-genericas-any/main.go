@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"golang.org/x/exp/constraints"
+)
 
 type MyInt int
 
@@ -18,7 +21,7 @@ type Number interface{
 	~int | ~float64 | ~float32 | ~uint
 }
 
-func sum[T Number](nums ...T) T { 
+func sum[T constraints.Integer | constraints.Float](nums ...T) T { 
 	var total T
 	for _, num := range nums{
 		total += num
@@ -27,3 +30,7 @@ func sum[T Number](nums ...T) T {
 	return total
 }
 
+// En la terminal:
+	// $ go mod init cualquier-nombre
+	// $ go mod tidy
+	// $ go get golang.org/x/exp/constraints
